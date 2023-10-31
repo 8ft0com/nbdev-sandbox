@@ -5,3 +5,5 @@ website:
       - 00_card.ipynb
       - 01_deck.ipynb
       - Wedding_Planner_App_Demo.ipynb
+      - document.qmd
+      - sandbox.ipynb

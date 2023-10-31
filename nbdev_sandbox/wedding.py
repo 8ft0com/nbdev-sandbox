@@ -10,7 +10,7 @@ __all__ = ['user_manager', 'host_registration', 'vendor_registration', 'host_use
            'NotificationSystem', 'send_quote_request', 'on_submit_button_clicked', 'host_interface', 'vendor_interface',
            'admin_interface']
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 4
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 3
 # The following classes are designed to manage user registration and login for a simple application.
 
 #|export
@@ -89,7 +89,7 @@ vendor_registration = user_manager.register('Vendor', 'vendor@example.com', 'Ven
 host_registration, vendor_registration
 
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 5
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 4
 # Event Creation
 
 class Event:
@@ -113,7 +113,7 @@ host_user = [user for user in user_manager.users if user.user_type == 'Host/Cust
 event_creation = create_event(host_user, 'John & Jane Wedding', 'Wedding', '2023-12-25', 20000)
 event_creation
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 8
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 7
 # Vendor Interaction and Messaging
 
 class Message:
@@ -151,7 +151,7 @@ quote_request = messaging_system.send_message(vendor_user, host_user, 'Quote req
 
 available_events, quote_request
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 10
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 9
 # User Registration & Login Simulation
 
 class User:
@@ -189,7 +189,7 @@ login_msg2 = system.login('vendor@example.com', 'wrongpass')
 
 register_msg1, register_msg2, login_msg1, login_msg2
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 11
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 10
 # Admin Panel
 
 class Admin:
@@ -220,7 +220,7 @@ vendor_approval = admin_user.approve_vendor(registered_vendors[0])
 
 registered_vendors, vendor_approval
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 12
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 11
 # Mock Notification System
 
 class Notification:
@@ -247,7 +247,7 @@ approval_notification = notification_system.send_notification(vendor_user, 'Your
 
 quote_notification, approval_notification
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 15
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 14
 # Mock data for Messages
 messages_data = {
     'message_id': [301, 302, 303, 304],
@@ -266,7 +266,7 @@ messages_df = pd.DataFrame(messages_data)
 
 messages_df
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 16
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 15
 def send_quote_request(host_id, vendor_id, event_id, content):
     """Simulate sending a quote request from a host to a vendor."""
     # Generate a new message_id
@@ -288,7 +288,7 @@ def send_quote_request(host_id, vendor_id, event_id, content):
 updated_messages_df = send_quote_request(1, 2, 101, 'Can you provide a quote for my wedding ceremony?')
 updated_messages_df
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 17
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 16
 import ipywidgets as widgets
 from IPython.display import display, clear_output
 
@@ -321,7 +321,7 @@ submit_button.on_click(on_submit_button_clicked)
 
 display(user_role_dropdown, submit_button, output)
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 18
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 17
 # Host Functionality
 
 def host_interface():
@@ -358,7 +358,47 @@ def host_interface():
 
 host_interface()
 
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 18
+# Vendor Functionality
+
+def vendor_interface():
+    # Dropdown to select an action
+    vendor_action_dropdown = widgets.Dropdown(
+        options=['View Available Events', 'Send Quotes', 'View Sent Quotes', 'Communicate with Hosts'],
+        value='View Available Events',
+        description='Action:',
+        disabled=False,
+    )
+
+    # Button to submit action
+    vendor_submit_button = widgets.Button(description='Submit')
+
+    # Output widget to display results
+    vendor_output = widgets.Output()
+
+    def on_vendor_submit_button_clicked(b):
+        with vendor_output:
+            clear_output()
+            action = vendor_action_dropdown.value
+            if action == 'View Available Events':
+                display(events_df)  # Display all events for simplicity
+            elif action == 'Send Quotes':
+                display('Feature to send quotes for events will be here.')
+            elif action == 'View Sent Quotes':
+                display(quotes_df[quotes_df['vendor_id'] == 2])  # Assuming vendor_id 2 for this demo
+            else:
+                display('Feature to communicate with hosts will be here.')
+
+    vendor_submit_button.on_click(on_vendor_submit_button_clicked)
+
+    display(vendor_action_dropdown, vendor_submit_button, vendor_output)
+
+vendor_interface()
+
 # %% ../nbs/Wedding_Planner_App_Demo.ipynb 19
+import ipywidgets as widgets
+from IPython.display import display, clear_output
+
 # Vendor Functionality
 
 def vendor_interface():
@@ -396,46 +436,6 @@ def vendor_interface():
 vendor_interface()
 
 # %% ../nbs/Wedding_Planner_App_Demo.ipynb 20
-import ipywidgets as widgets
-from IPython.display import display, clear_output
-
-# Vendor Functionality
-
-def vendor_interface():
-    # Dropdown to select an action
-    vendor_action_dropdown = widgets.Dropdown(
-        options=['View Available Events', 'Send Quotes', 'View Sent Quotes', 'Communicate with Hosts'],
-        value='View Available Events',
-        description='Action:',
-        disabled=False,
-    )
-
-    # Button to submit action
-    vendor_submit_button = widgets.Button(description='Submit')
-
-    # Output widget to display results
-    vendor_output = widgets.Output()
-
-    def on_vendor_submit_button_clicked(b):
-        with vendor_output:
-            clear_output()
-            action = vendor_action_dropdown.value
-            if action == 'View Available Events':
-                display(events_df)  # Display all events for simplicity
-            elif action == 'Send Quotes':
-                display('Feature to send quotes for events will be here.')
-            elif action == 'View Sent Quotes':
-                display(quotes_df[quotes_df['vendor_id'] == 2])  # Assuming vendor_id 2 for this demo
-            else:
-                display('Feature to communicate with hosts will be here.')
-
-    vendor_submit_button.on_click(on_vendor_submit_button_clicked)
-
-    display(vendor_action_dropdown, vendor_submit_button, vendor_output)
-
-vendor_interface()
-
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 21
 # Admin Functionality
 
 def admin_interface():
@@ -472,7 +472,7 @@ def admin_interface():
 
 admin_interface()
 
-# %% ../nbs/Wedding_Planner_App_Demo.ipynb 24
+# %% ../nbs/Wedding_Planner_App_Demo.ipynb 23
 import sqlite3
 
 # Create a new SQLite3 database

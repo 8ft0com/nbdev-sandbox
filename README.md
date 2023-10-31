@@ -20,10 +20,10 @@ c = Card(1,3)
 print(c)
 ```
 
-    NameError: name 'ranks' is not defined
+    3D
 
 ``` python
 suits
 ```
 
-    NameError: name 'suits' is not defined
+    ['C', 'D', 'H', 'S']

@@ -11,9 +11,22 @@ __all__ = ['user_manager', 'host_registration', 'vendor_registration', 'host_use
            'admin_interface']
 
 # %% ../nbs/Wedding_Planner_App_Demo.ipynb 4
-# User Registration and Login
+# The following classes are designed to manage user registration and login for a simple application.
 
+#|export
 class User:
+    """
+    Represents a user in the system.
+    
+        Attributes:
+    - **user_type** (str): The type of the user (e.g., 'Host/Customer', 'Vendor').
+    - **email** (str): The email address of the user.
+    - **name** (str): The name of the user.
+    - **mobile_number** (str): The mobile number of the user.
+    - **password** (str): The password of the user (In a real-world scenario, this would be hashed).
+    - **events** (list): A list to store events created by Host/Customer.
+
+    """
     def __init__(self, user_type, email, name, mobile_number, password):
         self.user_type = user_type
         self.email = email
@@ -23,15 +36,44 @@ class User:
         self.events = []  # List to store events created by Host/Customer
 
 class UserManager:
+    """
+    Manages operations related to users.
+    
+    Attributes:
+        users (list): A list to store registered users.
+    """
     def __init__(self):
         self.users = []  # List to store registered users
 
     def register(self, user_type, email, name, mobile_number, password):
+        """
+        Registers a new user.
+        
+        Args:
+            user_type (str): The type of the user.
+            email (str): The email address of the user.
+            name (str): The name of the user.
+            mobile_number (str): The mobile number of the user.
+            password (str): The password of the user.
+            
+        Returns:
+            str: A message indicating the registration status.
+        """
         user = User(user_type, email, name, mobile_number, password)
         self.users.append(user)
         return f'{name} registered successfully as a {user_type}!'
 
     def login(self, email, password):
+        """
+        Attempts to login a user.
+        
+        Args:
+            email (str): The email address of the user.
+            password (str): The password of the user.
+            
+        Returns:
+            str: A message indicating the login status.
+        """
         for user in self.users:
             if user.email == email and user.password == password:
                 return f'{user.name} logged in successfully!'
@@ -45,6 +87,7 @@ host_registration = user_manager.register('Host/Customer', 'host@example.com', '
 vendor_registration = user_manager.register('Vendor', 'vendor@example.com', 'Vendor Corp', '0987654321', 'vendorpass')
 
 host_registration, vendor_registration
+
 
 # %% ../nbs/Wedding_Planner_App_Demo.ipynb 5
 # Event Creation

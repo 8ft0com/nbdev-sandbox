@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>nbdev-sandbox - South Asian AI Wedding Planner</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="nbdev-sandbox - South Asian AI Wedding Planner">
+<meta property="og:description" content="">
+<meta property="og:site-name" content="nbdev-sandbox">
+<meta name="twitter:title" content="nbdev-sandbox - South Asian AI Wedding Planner">
+<meta name="twitter:description" content="">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">nbdev-sandbox</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../apps/wedding_planner_app_demo.html">apps</a></li><li class="breadcrumb-item"><a href="../apps/wedding_planner_app_demo.html">South Asian AI Wedding Planner</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">nbdev-sandbox</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">apps</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../apps/wedding_planner_app_demo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">South Asian AI Wedding Planner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">poker</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../apps/poker/card.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Card</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../apps/poker/deck.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deck</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../blog/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">blog</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">posts</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">2023-11-01-hello-world</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">papers</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/document.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text">sandbox</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sandbox/sandbox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sandbox Notebook</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#usermanager" id="toc-usermanager" class="nav-link active" data-scroll-target="#usermanager">UserManager</a></li>
+  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user">User</a></li>
+  <li><a href="#create_event" id="toc-create_event" class="nav-link" data-scroll-target="#create_event">create_event</a></li>
+  <li><a href="#event" id="toc-event" class="nav-link" data-scroll-target="#event">Event</a></li>
+  <li><a href="#data-structure-design" id="toc-data-structure-design" class="nav-link" data-scroll-target="#data-structure-design">Data Structure Design</a>
+  <ul class="collapse">
+  <li><a href="#users" id="toc-users" class="nav-link" data-scroll-target="#users">1. Users</a></li>
+  <li><a href="#events" id="toc-events" class="nav-link" data-scroll-target="#events">2. Events</a></li>
+  <li><a href="#quotes" id="toc-quotes" class="nav-link" data-scroll-target="#quotes">3. Quotes</a></li>
+  <li><a href="#messages" id="toc-messages" class="nav-link" data-scroll-target="#messages">4. Messages</a></li>
+  <li><a href="#subscriptions" id="toc-subscriptions" class="nav-link" data-scroll-target="#subscriptions">5. Subscriptions</a></li>
+  <li><a href="#notifications-assumption-simple-notification-structure-for-the-demo" id="toc-notifications-assumption-simple-notification-structure-for-the-demo" class="nav-link" data-scroll-target="#notifications-assumption-simple-notification-structure-for-the-demo">6. Notifications (Assumption: Simple notification structure for the demo)</a></li>
+  </ul></li>
+  <li><a href="#data-structure-for-wedding-planner-app" id="toc-data-structure-for-wedding-planner-app" class="nav-link" data-scroll-target="#data-structure-for-wedding-planner-app">Data Structure for Wedding Planner App</a>
+  <ul class="collapse">
+  <li><a href="#entities" id="toc-entities" class="nav-link" data-scroll-target="#entities">Entities:</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions:</a></li>
+  <li><a href="#view_events" id="toc-view_events" class="nav-link" data-scroll-target="#view_events">view_events</a></li>
+  <li><a href="#messagingsystem" id="toc-messagingsystem" class="nav-link" data-scroll-target="#messagingsystem">MessagingSystem</a></li>
+  <li><a href="#message" id="toc-message" class="nav-link" data-scroll-target="#message">Message</a></li>
+  <li><a href="#registrationsystem" id="toc-registrationsystem" class="nav-link" data-scroll-target="#registrationsystem">RegistrationSystem</a></li>
+  <li><a href="#user-1" id="toc-user-1" class="nav-link" data-scroll-target="#user-1">User</a></li>
+  <li><a href="#admin" id="toc-admin" class="nav-link" data-scroll-target="#admin">Admin</a></li>
+  <li><a href="#notificationsystem" id="toc-notificationsystem" class="nav-link" data-scroll-target="#notificationsystem">NotificationSystem</a></li>
+  <li><a href="#notification" id="toc-notification" class="nav-link" data-scroll-target="#notification">Notification</a></li>
+  <li><a href="#send_quote_request" id="toc-send_quote_request" class="nav-link" data-scroll-target="#send_quote_request">send_quote_request</a></li>
+  <li><a href="#on_submit_button_clicked" id="toc-on_submit_button_clicked" class="nav-link" data-scroll-target="#on_submit_button_clicked">on_submit_button_clicked</a></li>
+  <li><a href="#host_interface" id="toc-host_interface" class="nav-link" data-scroll-target="#host_interface">host_interface</a></li>
+  <li><a href="#vendor_interface" id="toc-vendor_interface" class="nav-link" data-scroll-target="#vendor_interface">vendor_interface</a></li>
+  <li><a href="#vendor_interface-1" id="toc-vendor_interface-1" class="nav-link" data-scroll-target="#vendor_interface-1">vendor_interface</a></li>
+  <li><a href="#admin_interface" id="toc-admin_interface" class="nav-link" data-scroll-target="#admin_interface">admin_interface</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/8ft0com/nbdev-sandbox/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">South Asian AI Wedding Planner</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install flask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request, jsonify</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L38" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<section id="usermanager" class="level3">
+<h3 class="anchored" data-anchor-id="usermanager">UserManager</h3>
+<blockquote class="blockquote">
+<pre><code> UserManager ()</code></pre>
+</blockquote>
+<p>Manages operations related to users.</p>
+<p>Attributes: users (list): A list to store registered users.</p>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L157" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="user" class="level3">
+<h3 class="anchored" data-anchor-id="user">User</h3>
+<blockquote class="blockquote">
+<pre><code> User (user_type, email, name, mobile_number, password)</code></pre>
+</blockquote>
+<p>Represents a user in the system.</p>
+<pre><code>Attributes:</code></pre>
+<ul>
+<li><strong>user_type</strong> (str): The type of the user (e.g., ‘Host/Customer’, ‘Vendor’).</li>
+<li><strong>email</strong> (str): The email address of the user.</li>
+<li><strong>name</strong> (str): The name of the user.</li>
+<li><strong>mobile_number</strong> (str): The mobile number of the user.</li>
+<li><strong>password</strong> (str): The password of the user (In a real-world scenario, this would be hashed).</li>
+<li><strong>events</strong> (list): A list to store events created by Host/Customer.</li>
+</ul>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L102" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="create_event" class="level3">
+<h3 class="anchored" data-anchor-id="create_event">create_event</h3>
+<blockquote class="blockquote">
+<pre><code> create_event (user, event_name, event_type, event_date, budget)</code></pre>
+</blockquote>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L95" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="event" class="level3">
+<h3 class="anchored" data-anchor-id="event">Event</h3>
+<blockquote class="blockquote">
+<pre><code> Event (event_name, event_type, event_date, budget)</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+</section>
+<section id="data-structure-design" class="level2">
+<h2 class="anchored" data-anchor-id="data-structure-design">Data Structure Design</h2>
+<section id="users" class="level3">
+<h3 class="anchored" data-anchor-id="users">1. Users</h3>
+<ul>
+<li><strong>UserID</strong>: Unique identifier for the user</li>
+<li><strong>Name</strong>: Full name of the user</li>
+<li><strong>Email</strong>: Email address</li>
+<li><strong>Password</strong>: Encrypted password (for demonstration purposes, we’ll keep it simple)</li>
+<li><strong>UserType</strong>: Host, Vendor, or Admin</li>
+<li><strong>MobileNumber</strong>: Contact number</li>
+<li><strong>SocialMediaID</strong>: Identifier from Google/Facebook (if registered via social media)</li>
+</ul>
+</section>
+<section id="events" class="level3">
+<h3 class="anchored" data-anchor-id="events">2. Events</h3>
+<ul>
+<li><strong>EventID</strong>: Unique identifier for the event</li>
+<li><strong>HostUserID</strong>: UserID of the host creating the event</li>
+<li><strong>EventType</strong>: Type of the event (e.g., Wedding, Birthday, etc.)</li>
+<li><strong>EventDetails</strong>: Additional details about the event</li>
+<li><strong>Budget</strong>: Estimated budget for the event</li>
+</ul>
+</section>
+<section id="quotes" class="level3">
+<h3 class="anchored" data-anchor-id="quotes">3. Quotes</h3>
+<ul>
+<li><strong>QuoteID</strong>: Unique identifier for the quote</li>
+<li><strong>VendorUserID</strong>: UserID of the vendor sending the quote</li>
+<li><strong>EventID</strong>: Event for which the quote is sent</li>
+<li><strong>QuoteAmount</strong>: Quoted amount by the vendor</li>
+<li><strong>QuoteDetails</strong>: Additional details or terms of the quote</li>
+</ul>
+</section>
+<section id="messages" class="level3">
+<h3 class="anchored" data-anchor-id="messages">4. Messages</h3>
+<ul>
+<li><strong>MessageID</strong>: Unique identifier for the message</li>
+<li><strong>SenderUserID</strong>: UserID of the sender</li>
+<li><strong>ReceiverUserID</strong>: UserID of the receiver</li>
+<li><strong>EventID</strong>: Event related to the message</li>
+<li><strong>MessageContent</strong>: Content of the message</li>
+</ul>
+</section>
+<section id="subscriptions" class="level3">
+<h3 class="anchored" data-anchor-id="subscriptions">5. Subscriptions</h3>
+<ul>
+<li><strong>SubscriptionID</strong>: Unique identifier for the subscription</li>
+<li><strong>VendorUserID</strong>: UserID of the vendor subscribing</li>
+<li><strong>SubscriptionType</strong>: Type of subscription (e.g., Basic, Premium, etc.)</li>
+<li><strong>SubscriptionDetails</strong>: Details about what’s included in the subscription</li>
+</ul>
+</section>
+<section id="notifications-assumption-simple-notification-structure-for-the-demo" class="level3">
+<h3 class="anchored" data-anchor-id="notifications-assumption-simple-notification-structure-for-the-demo">6. Notifications (Assumption: Simple notification structure for the demo)</h3>
+<ul>
+<li><strong>NotificationID</strong>: Unique identifier for the notification</li>
+<li><strong>UserID</strong>: User receiving the notification</li>
+<li><strong>NotificationContent</strong>: Content of the notification</li>
+<li><strong>IsRead</strong>: Boolean indicating if the notification has been read</li>
+</ul>
+<p>These are the basic data structures we’ll need for our demo. Next, we’ll implement the user registration and login system.</p>
+</section>
+</section>
+<section id="data-structure-for-wedding-planner-app" class="level2">
+<h2 class="anchored" data-anchor-id="data-structure-for-wedding-planner-app">Data Structure for Wedding Planner App</h2>
+<section id="entities" class="level3">
+<h3 class="anchored" data-anchor-id="entities">Entities:</h3>
+<ol type="1">
+<li><strong>Users</strong>:
+<ul>
+<li>Attributes: user_id, name, email, password, user_type (Host, Vendor, Admin), registration_date</li>
+<li>Relationships: Host can create multiple events. Vendor can bid on multiple events. Admin oversees all activities.</li>
+</ul></li>
+<li><strong>Events</strong>:
+<ul>
+<li>Attributes: event_id, host_id (foreign key), event_name, event_type, event_date, budget, description</li>
+<li>Relationships: An event is created by one host. Multiple vendors can bid on an event.</li>
+</ul></li>
+<li><strong>Quotes</strong>:
+<ul>
+<li>Attributes: quote_id, event_id (foreign key), vendor_id (foreign key), quoted_price, status (Pending, Accepted, Rejected)</li>
+<li>Relationships: A quote is associated with one event and one vendor.</li>
+</ul></li>
+<li><strong>Messages</strong>:
+<ul>
+<li>Attributes: message_id, sender_id (foreign key), receiver_id (foreign key), event_id (foreign key), content, timestamp</li>
+<li>Relationships: Messages are exchanged between hosts and vendors for a specific event.</li>
+</ul></li>
+<li><strong>Subscriptions</strong> (Mock for demo):
+<ul>
+<li>Attributes: subscription_id, vendor_id (foreign key), subscription_type, start_date, end_date</li>
+<li>Relationships: A vendor can have one active subscription at a time.</li>
+</ul></li>
+</ol>
+</section>
+<section id="assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="assumptions">Assumptions:</h3>
+<ul>
+<li>For the sake of simplicity, we’ll use mock data for user registration and login.</li>
+<li>Event details are simplified to include only essential attributes.</li>
+<li>Messaging is basic without media sharing.</li>
+<li>We’ll use a mock subscription plan for vendors for the demo.</li>
+</ul>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L134" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="view_events" class="level3">
+<h3 class="anchored" data-anchor-id="view_events">view_events</h3>
+<blockquote class="blockquote">
+<pre><code> view_events (vendor)</code></pre>
+</blockquote>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L125" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="messagingsystem" class="level3">
+<h3 class="anchored" data-anchor-id="messagingsystem">MessagingSystem</h3>
+<blockquote class="blockquote">
+<pre><code> MessagingSystem ()</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L119" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="message" class="level3">
+<h3 class="anchored" data-anchor-id="message">Message</h3>
+<blockquote class="blockquote">
+<pre><code> Message (sender, receiver, content)</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mock data for Users</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>users_data <span class="op">=</span> {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'user_id'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'Admin'</span>],</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'email'</span>: [<span class="st">'alice@email.com'</span>, <span class="st">'bob@email.com'</span>, <span class="st">'charlie@email.com'</span>, <span class="st">'admin@email.com'</span>],</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'password'</span>: [<span class="st">'pass123'</span>, <span class="st">'pass456'</span>, <span class="st">'pass789'</span>, <span class="st">'adminpass'</span>],  <span class="co"># For demo purposes, passwords are kept simple</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'user_type'</span>: [<span class="st">'Host'</span>, <span class="st">'Vendor'</span>, <span class="st">'Vendor'</span>, <span class="st">'Admin'</span>],</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'registration_date'</span>: [<span class="st">'2023-08-01'</span>, <span class="st">'2023-08-02'</span>, <span class="st">'2023-08-03'</span>, <span class="st">'2023-08-01'</span>]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>users_df <span class="op">=</span> pd.DataFrame(users_data)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>users_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">user_id</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">email</th>
+<th data-quarto-table-cell-role="th">password</th>
+<th data-quarto-table-cell-role="th">user_type</th>
+<th data-quarto-table-cell-role="th">registration_date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Alice</td>
+<td>alice@email.com</td>
+<td>pass123</td>
+<td>Host</td>
+<td>2023-08-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Bob</td>
+<td>bob@email.com</td>
+<td>pass456</td>
+<td>Vendor</td>
+<td>2023-08-02</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Charlie</td>
+<td>charlie@email.com</td>
+<td>pass789</td>
+<td>Vendor</td>
+<td>2023-08-03</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>Admin</td>
+<td>admin@email.com</td>
+<td>adminpass</td>
+<td>Admin</td>
+<td>2023-08-01</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L167" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="registrationsystem" class="level3">
+<h3 class="anchored" data-anchor-id="registrationsystem">RegistrationSystem</h3>
+<blockquote class="blockquote">
+<pre><code> RegistrationSystem ()</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L157" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="user-1" class="level3">
+<h3 class="anchored" data-anchor-id="user-1">User</h3>
+<blockquote class="blockquote">
+<pre><code> User (user_id, name, email, password, user_type, mobile_number,
+       social_media_id=None)</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L195" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="admin" class="level3">
+<h3 class="anchored" data-anchor-id="admin">Admin</h3>
+<blockquote class="blockquote">
+<pre><code> Admin (name)</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L231" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="notificationsystem" class="level3">
+<h3 class="anchored" data-anchor-id="notificationsystem">NotificationSystem</h3>
+<blockquote class="blockquote">
+<pre><code> NotificationSystem ()</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L226" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="notification" class="level3">
+<h3 class="anchored" data-anchor-id="notification">Notification</h3>
+<blockquote class="blockquote">
+<pre><code> Notification (user, content)</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mock data for Events</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>events_data <span class="op">=</span> {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event_id'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>],</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'host_id'</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event_name'</span>: [<span class="st">'Wedding Ceremony'</span>, <span class="st">'Reception Party'</span>, <span class="st">'Birthday Bash'</span>],</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event_type'</span>: [<span class="st">'Wedding'</span>, <span class="st">'Party'</span>, <span class="st">'Birthday'</span>],</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event_date'</span>: [<span class="st">'2023-12-01'</span>, <span class="st">'2023-12-02'</span>, <span class="st">'2023-11-15'</span>],</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'budget'</span>: [<span class="dv">10000</span>, <span class="dv">5000</span>, <span class="dv">2000</span>],</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'description'</span>: [<span class="st">'A grand wedding ceremony.'</span>, <span class="st">'A fun-filled reception party.'</span>, <span class="st">'A surprise birthday bash.'</span>]</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>events_df <span class="op">=</span> pd.DataFrame(events_data)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>events_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">event_id</th>
+<th data-quarto-table-cell-role="th">host_id</th>
+<th data-quarto-table-cell-role="th">event_name</th>
+<th data-quarto-table-cell-role="th">event_type</th>
+<th data-quarto-table-cell-role="th">event_date</th>
+<th data-quarto-table-cell-role="th">budget</th>
+<th data-quarto-table-cell-role="th">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>101</td>
+<td>1</td>
+<td>Wedding Ceremony</td>
+<td>Wedding</td>
+<td>2023-12-01</td>
+<td>10000</td>
+<td>A grand wedding ceremony.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>102</td>
+<td>1</td>
+<td>Reception Party</td>
+<td>Party</td>
+<td>2023-12-02</td>
+<td>5000</td>
+<td>A fun-filled reception party.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>103</td>
+<td>2</td>
+<td>Birthday Bash</td>
+<td>Birthday</td>
+<td>2023-11-15</td>
+<td>2000</td>
+<td>A surprise birthday bash.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mock data for Quotes</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>quotes_data <span class="op">=</span> {</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'quote_id'</span>: [<span class="dv">201</span>, <span class="dv">202</span>, <span class="dv">203</span>],</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event_id'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>],</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'vendor_id'</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>],</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'quoted_price'</span>: [<span class="dv">9500</span>, <span class="dv">4800</span>, <span class="dv">1900</span>],</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'status'</span>: [<span class="st">'Pending'</span>, <span class="st">'Accepted'</span>, <span class="st">'Rejected'</span>]</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>quotes_df <span class="op">=</span> pd.DataFrame(quotes_data)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>quotes_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">quote_id</th>
+<th data-quarto-table-cell-role="th">event_id</th>
+<th data-quarto-table-cell-role="th">vendor_id</th>
+<th data-quarto-table-cell-role="th">quoted_price</th>
+<th data-quarto-table-cell-role="th">status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>201</td>
+<td>101</td>
+<td>2</td>
+<td>9500</td>
+<td>Pending</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>202</td>
+<td>102</td>
+<td>3</td>
+<td>4800</td>
+<td>Accepted</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>203</td>
+<td>103</td>
+<td>2</td>
+<td>1900</td>
+<td>Rejected</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L270" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="send_quote_request" class="level3">
+<h3 class="anchored" data-anchor-id="send_quote_request">send_quote_request</h3>
+<blockquote class="blockquote">
+<pre><code> send_quote_request (host_id, vendor_id, event_id, content)</code></pre>
+</blockquote>
+<p>Simulate sending a quote request from a host to a vendor.</p>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L309" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="on_submit_button_clicked" class="level3">
+<h3 class="anchored" data-anchor-id="on_submit_button_clicked">on_submit_button_clicked</h3>
+<blockquote class="blockquote">
+<pre><code> on_submit_button_clicked (b)</code></pre>
+</blockquote>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L327" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="host_interface" class="level3">
+<h3 class="anchored" data-anchor-id="host_interface">host_interface</h3>
+<blockquote class="blockquote">
+<pre><code> host_interface ()</code></pre>
+</blockquote>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L404" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="vendor_interface" class="level3">
+<h3 class="anchored" data-anchor-id="vendor_interface">vendor_interface</h3>
+<blockquote class="blockquote">
+<pre><code> vendor_interface ()</code></pre>
+</blockquote>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L404" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="vendor_interface-1" class="level3">
+<h3 class="anchored" data-anchor-id="vendor_interface-1">vendor_interface</h3>
+<blockquote class="blockquote">
+<pre><code> vendor_interface ()</code></pre>
+</blockquote>
+<hr>
+<p><a href="https://github.com/8ft0com/nbdev-sandbox/blob/main/nbdev_sandbox/wedding.py#L441" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="admin_interface" class="level3">
+<h3 class="anchored" data-anchor-id="admin_interface">admin_interface</h3>
+<blockquote class="blockquote">
+<pre><code> admin_interface ()</code></pre>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_data_creation():</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Test Users Data</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(users_df) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'No users data found.'</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'user_id'</span> <span class="kw">in</span> users_df.columns, <span class="st">'user_id column missing in users data.'</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'user_type'</span> <span class="kw">in</span> users_df.columns, <span class="st">'user_type column missing in users data.'</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Test Events Data</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(events_df) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'No events data found.'</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'event_id'</span> <span class="kw">in</span> events_df.columns, <span class="st">'event_id column missing in events data.'</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'host_id'</span> <span class="kw">in</span> events_df.columns, <span class="st">'host_id column missing in events data.'</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Test Quotes Data</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(quotes_df) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'No quotes data found.'</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'quote_id'</span> <span class="kw">in</span> quotes_df.columns, <span class="st">'quote_id column missing in quotes data.'</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'event_id'</span> <span class="kw">in</span> quotes_df.columns, <span class="st">'event_id column missing in quotes data.'</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'vendor_id'</span> <span class="kw">in</span> quotes_df.columns, <span class="st">'vendor_id column missing in quotes data.'</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Data Creation Tests Passed!'</span>)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>test_data_creation()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data Creation Tests Passed!</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_functionalities():</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Test Adding Events</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    initial_event_count <span class="op">=</span> <span class="bu">len</span>(events_df)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    new_event <span class="op">=</span> {<span class="st">'event_id'</span>: <span class="dv">4</span>, <span class="st">'event_name'</span>: <span class="st">'Test Event'</span>, <span class="st">'event_type'</span>: <span class="st">'Wedding'</span>, <span class="st">'budget'</span>: <span class="dv">10000</span>, <span class="st">'host_id'</span>: <span class="dv">1</span>}</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    events_df.loc[<span class="bu">len</span>(events_df)] <span class="op">=</span> new_event</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(events_df) <span class="op">==</span> initial_event_count <span class="op">+</span> <span class="dv">1</span>, <span class="st">'Failed to add new event.'</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Test Sending Quotes</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    initial_quote_count <span class="op">=</span> <span class="bu">len</span>(quotes_df)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    new_quote <span class="op">=</span> {<span class="st">'quote_id'</span>: <span class="dv">4</span>, <span class="st">'event_id'</span>: <span class="dv">4</span>, <span class="st">'vendor_id'</span>: <span class="dv">2</span>, <span class="st">'amount'</span>: <span class="dv">9000</span>}</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    quotes_df.loc[<span class="bu">len</span>(quotes_df)] <span class="op">=</span> new_quote</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(quotes_df) <span class="op">==</span> initial_quote_count <span class="op">+</span> <span class="dv">1</span>, <span class="st">'Failed to send quote.'</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Test User Management</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="dv">1</span> <span class="kw">in</span> users_df[<span class="st">'user_id'</span>].values, <span class="st">'Host user missing.'</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="dv">2</span> <span class="kw">in</span> users_df[<span class="st">'user_id'</span>].values, <span class="st">'Vendor user missing.'</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Functionality Tests Passed!'</span>)</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>test_functionalities()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Functionality Tests Passed!</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Requirement already satisfied: flask in /usr/local/lib/python3.11/site-packages (2.3.2)
+Requirement already satisfied: Werkzeug&gt;=2.3.3 in /usr/local/lib/python3.11/site-packages (from flask) (2.3.6)
+Requirement already satisfied: Jinja2&gt;=3.1.2 in /usr/local/lib/python3.11/site-packages (from flask) (3.1.2)
+Requirement already satisfied: itsdangerous&gt;=2.1.2 in /usr/local/lib/python3.11/site-packages (from flask) (2.1.2)
+Requirement already satisfied: click&gt;=8.1.3 in /usr/local/lib/python3.11/site-packages (from flask) (8.1.3)
+Requirement already satisfied: blinker&gt;=1.6.2 in /usr/local/lib/python3.11/site-packages (from flask) (1.6.2)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.11/site-packages (from Jinja2&gt;=3.1.2-&gt;flask) (2.1.2)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Flask app</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample endpoint to test Flask setup</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/ping'</span>, methods<span class="op">=</span>[<span class="st">'GET'</span>])</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ping():</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify({<span class="st">'message'</span>: <span class="st">'pong'</span>}), <span class="dv">200</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Flask app (Note: This won't work directly in Noteable.io, but is here for demonstration purposes)</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># if __name__ == '__main__':</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     app.run(debug=True)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to SQLite3 Database</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_db_connection():</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">'wedding_planner_app.db'</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    conn.row_factory <span class="op">=</span> sqlite3.Row</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conn</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># User Registration Endpoint</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/register'</span>, methods<span class="op">=</span>[<span class="st">'POST'</span>])</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> register_user():</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> request.get_json()</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> get_db_connection()</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">'''</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="st">    INSERT INTO users (user_type, name, email, password, phone_number)</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="st">    VALUES (?, ?, ?, ?, ?)</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="st">    '''</span>, (data[<span class="st">'user_type'</span>], data[<span class="st">'name'</span>], data[<span class="st">'email'</span>], data[<span class="st">'password'</span>], data[<span class="st">'phone_number'</span>]))</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify({<span class="st">'message'</span>: <span class="st">'User registered successfully!'</span>}), <span class="dv">201</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Event Creation Endpoint</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/create_event'</span>, methods<span class="op">=</span>[<span class="st">'POST'</span>])</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_event():</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> request.get_json()</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> get_db_connection()</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">'''</span></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a><span class="st">    INSERT INTO events (host_id, event_name, event_type, budget, event_date)</span></span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a><span class="st">    VALUES (?, ?, ?, ?, ?)</span></span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a><span class="st">    '''</span>, (data[<span class="st">'host_id'</span>], data[<span class="st">'event_name'</span>], data[<span class="st">'event_type'</span>], data[<span class="st">'budget'</span>], data[<span class="st">'event_date'</span>]))</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify({<span class="st">'message'</span>: <span class="st">'Event created successfully!'</span>}), <span class="dv">201</span></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Send Quotes Endpoint</span></span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/send_quote'</span>, methods<span class="op">=</span>[<span class="st">'POST'</span>])</span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> send_quote():</span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> request.get_json()</span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> get_db_connection()</span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">'''</span></span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a><span class="st">    INSERT INTO quotes (event_id, vendor_id, amount)</span></span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a><span class="st">    VALUES (?, ?, ?)</span></span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a><span class="st">    '''</span>, (data[<span class="st">'event_id'</span>], data[<span class="st">'vendor_id'</span>], data[<span class="st">'amount'</span>]))</span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify({<span class="st">'message'</span>: <span class="st">'Quote sent successfully!'</span>}), <span class="dv">201</span></span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-49"><a href="#cb32-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Messaging Endpoint</span></span>
+<span id="cb32-50"><a href="#cb32-50" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/send_message'</span>, methods<span class="op">=</span>[<span class="st">'POST'</span>])</span>
+<span id="cb32-51"><a href="#cb32-51" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> send_message():</span>
+<span id="cb32-52"><a href="#cb32-52" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> request.get_json()</span>
+<span id="cb32-53"><a href="#cb32-53" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> get_db_connection()</span>
+<span id="cb32-54"><a href="#cb32-54" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb32-55"><a href="#cb32-55" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">'''</span></span>
+<span id="cb32-56"><a href="#cb32-56" aria-hidden="true" tabindex="-1"></a><span class="st">    INSERT INTO messages (sender_id, receiver_id, event_id, message_content)</span></span>
+<span id="cb32-57"><a href="#cb32-57" aria-hidden="true" tabindex="-1"></a><span class="st">    VALUES (?, ?, ?, ?)</span></span>
+<span id="cb32-58"><a href="#cb32-58" aria-hidden="true" tabindex="-1"></a><span class="st">    '''</span>, (data[<span class="st">'sender_id'</span>], data[<span class="st">'receiver_id'</span>], data[<span class="st">'event_id'</span>], data[<span class="st">'message_content'</span>]))</span>
+<span id="cb32-59"><a href="#cb32-59" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb32-60"><a href="#cb32-60" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb32-61"><a href="#cb32-61" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify({<span class="st">'message'</span>: <span class="st">'Message sent successfully!'</span>}), <span class="dv">201</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>date</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Tue Oct 31 19:59:26 AEDT 2023</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking the columns of the quotes table</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> get_db_connection()</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">'PRAGMA table_info(quotes)'</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> cursor.fetchall()</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>conn.close()</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the columns</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>[&lt;sqlite3.Row&gt;,
+ &lt;sqlite3.Row&gt;,
+ &lt;sqlite3.Row&gt;,
+ &lt;sqlite3.Row&gt;,
+ &lt;sqlite3.Row&gt;]</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting and displaying the column names of the quotes table</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> [column[<span class="dv">1</span>] <span class="cf">for</span> column <span class="kw">in</span> columns]</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>column_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>['quote_id', 'event_id', 'vendor_id', 'amount', 'quote_date']</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking the columns of the messages table</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> get_db_connection()</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">'PRAGMA table_info(messages)'</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>message_columns <span class="op">=</span> cursor.fetchall()</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>conn.close()</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the columns</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>message_column_names <span class="op">=</span> [column[<span class="dv">1</span>] <span class="cf">for</span> column <span class="kw">in</span> message_columns]</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>message_column_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>['message_id',
+ 'sender_id',
+ 'receiver_id',
+ 'event_id',
+ 'message_content',
+ 'message_date']</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

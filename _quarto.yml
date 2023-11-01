@@ -1,0 +1,58 @@
+project:
+  type: website
+  preview:
+    port: 3000
+    browser: false
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 4
+
+website:
+  twitter-card: true
+  open-graph: true
+  repo-actions: [issue]
+  sidebar:
+    style: floating
+    contents:
+      - auto: "/*.ipynb"
+      - section: Tutorials
+        contents: tutorials/*
+      - section: Explanations
+        contents: explanations/*
+      - section: API
+        contents: api/*
+  favicon: favicon.png
+  navbar:
+    background: primary
+    search: true
+    collapse-below: lg
+    left:
+      - text: "Get Started"
+        href: getting_started.ipynb
+      - text: "Tutorial"
+        href: tutorials/tutorial.ipynb
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "Help"
+        menu:
+          - text: "Report an Issue"
+            icon: bug
+            href: https://github.com/fastai/nbdev/issues
+          - text: "Fast.ai Forum"
+            icon: chat-right-text
+            href: https://forums.fast.ai/
+          - text: "FAQ"
+            icon: question-circle
+            href: getting_started.ipynb#faq
+    right:
+      - icon: github
+        href: "https://github.com/fastai/nbdev"
+      - icon: twitter
+        href: https://twitter.com/fastdotai
+        aria-label: Fast.ai Twitter
+
+metadata-files: [nbdev.yml]

@@ -282,7 +282,7 @@ def send_quote_request(host_id, vendor_id, event_id, content):
         'content': content,
         'timestamp': current_timestamp
     }
-    return messages_df.append(new_message, ignore_index=True)
+    return pd.concat([messages_df, pd.DataFrame([new_message])], ignore_index=True)
 
 # Simulate sending a quote request
 updated_messages_df = send_quote_request(1, 2, 101, 'Can you provide a quote for my wedding ceremony?')

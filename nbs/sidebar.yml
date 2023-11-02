@@ -17,6 +17,13 @@ website:
                 contents: []
                 href: blog/posts/2023-11-01-hello-world/index.qmd
         href: blog/index.qmd
+      - section: library
+        contents:
+          - section: The Evolution of Marketing
+            contents:
+              - library/The Evolution of Marketing/The Trade Era.qmd
+            href: library/The Evolution of Marketing/index.qmd
+        href: library/index.qmd
       - section: papers
         contents:
           - papers/document.qmd

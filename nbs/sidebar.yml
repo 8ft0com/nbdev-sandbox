@@ -21,8 +21,15 @@ website:
         contents:
           - section: The Evolution of Marketing
             contents:
+              - library/The Evolution of Marketing/The Production Era.qmd
               - library/The Evolution of Marketing/The Trade Era.qmd
             href: library/The Evolution of Marketing/index.qmd
+          - section: demo
+            contents:
+              - library/demo/intro.qmd
+              - library/demo/references.qmd
+              - library/demo/summary.qmd
+            href: library/demo/index.qmd
         href: library/index.qmd
       - section: papers
         contents:

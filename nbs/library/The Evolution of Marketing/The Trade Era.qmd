@@ -1,4 +1,6 @@
-# The Trade Era
+---
+title: "The Trade Era"
+---
 
 ![Traders](The Trade Era.png)
 
